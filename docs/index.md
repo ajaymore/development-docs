@@ -21,4 +21,4 @@ For full documentation visit [mkdocs.org](http://mkdocs.org).
         ...       # Other markdown pages, images and other files.
 
 
-You can use the [editor on GitHub](https://github.com/ajaymore/development-docs/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+You can use the [editor on GitHub](https://github.com/ajaymore/development-docs) to maintain and preview the content for your website in Markdown files.
