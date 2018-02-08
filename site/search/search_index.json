@@ -1,0 +1,309 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Building documentation with MKDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nInstallation\n\n\n\n\nsudo pip install mkdocs\n\n\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#building-documentation-with-mkdocs", 
+            "text": "For full documentation visit  mkdocs.org .", 
+            "title": "Building documentation with MKDocs"
+        }, 
+        {
+            "location": "/#installation", 
+            "text": "sudo pip install mkdocs", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/#commands", 
+            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
+            "title": "Commands"
+        }, 
+        {
+            "location": "/#project-layout", 
+            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "title": "Project layout"
+        }, 
+        {
+            "location": "/linux/ubuntu-setup/", 
+            "text": "Ubuntu Setup\n\n\n\n\nOS is installed through live CD\n\n\n\n\nPackages\n\n\nBase packages\n\n\n\n\nsudo apt update \n sudo apt dist-upgrade \n sudo apt autoremove\n\n\nsudo apt -y install gcc make linux-headers-$(uname -r) dkms\n\n\nsudo apt install -y exfat-fuse exfat-utils build-essential autoconf automake python-dev youtube-dl curl net-tools vim lib64stdc++6:i386 mesa-utils libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386\n\n\n\n\nApplications\n\n\n\n\nInstall chrome, vscode, telegram, robomongo\n\n\n\n\nDevelopment Environment\n\n\nEditors\n\n\n\n\nSublime\n\n\nVSCode\n\n\n\n\n# install consolas font\nsudo apt install -y font-manager cabextract\nwget https://github.com/kakkoyun/linux.files/raw/master/fonts/Consolas.ttf\n\n Install using font manager\n# VS Code - prettier, python, kary-light\n{\n  \neditor.formatOnSave\n: true,\n  \nwindow.zoomLevel\n: 0,\n  \neditor.fontFamily\n: \nCONSOLAS\n,\n  \nworkbench.colorTheme\n: \nKary \uff0d Light\n,\n  \nprettier.eslintIntegration\n: true,\n  \nprettier.singleQuote\n: true\n}\n\n\n\n\n\nNodejs\n\n\n\n\nNodejs\n\n\nYarn\n\n\nWatchman \n./configure --enable-lenient\n\n\n\n\necho 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_watches  \n echo 999999 | sudo tee -a  /proc/sys/fs/inotify/max_queued_events \n echo 999999 | sudo tee  -a /proc/sys/fs/inotify/max_user_instances \n watchman  shutdown-server\nwatchman watch-del-all\nwatchman shutdown-server\nsudo lsof -i :8081\nkill -9 23583\n\n\n\n\nDocker\n\n\n\n\nDocker\n\n\nDocker-compose\n\n\n\n\nsudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose\nsudo chmod +x /usr/local/bin/docker-compose\n\n\n\n\n\n\nPost docker installation\n\n\nVirtualbox\n \n\n\n\n\nsudo sh -c 'echo \ndeb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib\n \n /etc/apt/sources.list'\nsudo apt-key add oracle_vbox_2016.asc\nsudo apt-key add oracle_vbox.asc\nsudo apt update\nsudo apt install -y virtualbox-5.2\nVBoxManage -v\n\n\n\n\nAndroid\n\n\n\n\nJdk\n\n\nAndroid Studio\n\n\nEmulation\n\n\n\n\nvim ~/.bashrc\nADD export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1\nsource ~/.bashrc\ncd ~/Android/Sdk/tools/lib/\nln -s /usr/lib64/libstdc++.so.6  libstdc++\n\n\n\n\nReact Native\n\n\n\n\nSetup\n\n\n\n\nsudo yarn global add ngork --modules-folder /usr/lib/node_modules\nsudo yarn global add exp --modules-folder /usr/lib/node_modules\nsudo npm install -g create-react-native-app react-native-cli\n\n\n\n\nInstallation cleanup, errors\n\n\nsudo apt update\nsudo apt clean\nsudo apt autoremove\nsudo apt --fix-broken install\nsudo add-apt-repository -r ppa:\nppa to remove\n\ndpkg --list\nsudo apt-get --purge remove gimp\nsudo apt-get autoremove\nsudo apt-get purge --auto-remove gimp\nsudo apt-get clean\n\n\n\n\nOS Configuration\n\n\n\n\ngsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'", 
+            "title": "Ubuntu setup"
+        }, 
+        {
+            "location": "/linux/ubuntu-setup/#ubuntu-setup", 
+            "text": "OS is installed through live CD", 
+            "title": "Ubuntu Setup"
+        }, 
+        {
+            "location": "/linux/ubuntu-setup/#packages", 
+            "text": "", 
+            "title": "Packages"
+        }, 
+        {
+            "location": "/linux/ubuntu-setup/#base-packages", 
+            "text": "sudo apt update   sudo apt dist-upgrade   sudo apt autoremove  sudo apt -y install gcc make linux-headers-$(uname -r) dkms  sudo apt install -y exfat-fuse exfat-utils build-essential autoconf automake python-dev youtube-dl curl net-tools vim lib64stdc++6:i386 mesa-utils libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386", 
+            "title": "Base packages"
+        }, 
+        {
+            "location": "/linux/ubuntu-setup/#applications", 
+            "text": "Install chrome, vscode, telegram, robomongo", 
+            "title": "Applications"
+        }, 
+        {
+            "location": "/linux/ubuntu-setup/#development-environment", 
+            "text": "", 
+            "title": "Development Environment"
+        }, 
+        {
+            "location": "/linux/ubuntu-setup/#editors", 
+            "text": "Sublime  VSCode   # install consolas font\nsudo apt install -y font-manager cabextract\nwget https://github.com/kakkoyun/linux.files/raw/master/fonts/Consolas.ttf  Install using font manager\n# VS Code - prettier, python, kary-light\n{\n   editor.formatOnSave : true,\n   window.zoomLevel : 0,\n   editor.fontFamily :  CONSOLAS ,\n   workbench.colorTheme :  Kary \uff0d Light ,\n   prettier.eslintIntegration : true,\n   prettier.singleQuote : true\n}", 
+            "title": "Editors"
+        }, 
+        {
+            "location": "/linux/ubuntu-setup/#nodejs", 
+            "text": "Nodejs  Yarn  Watchman  ./configure --enable-lenient   echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_watches    echo 999999 | sudo tee -a  /proc/sys/fs/inotify/max_queued_events   echo 999999 | sudo tee  -a /proc/sys/fs/inotify/max_user_instances   watchman  shutdown-server\nwatchman watch-del-all\nwatchman shutdown-server\nsudo lsof -i :8081\nkill -9 23583", 
+            "title": "Nodejs"
+        }, 
+        {
+            "location": "/linux/ubuntu-setup/#docker", 
+            "text": "Docker  Docker-compose   sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose\nsudo chmod +x /usr/local/bin/docker-compose   Post docker installation  Virtualbox     sudo sh -c 'echo  deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib    /etc/apt/sources.list'\nsudo apt-key add oracle_vbox_2016.asc\nsudo apt-key add oracle_vbox.asc\nsudo apt update\nsudo apt install -y virtualbox-5.2\nVBoxManage -v", 
+            "title": "Docker"
+        }, 
+        {
+            "location": "/linux/ubuntu-setup/#android", 
+            "text": "Jdk  Android Studio  Emulation   vim ~/.bashrc\nADD export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1\nsource ~/.bashrc\ncd ~/Android/Sdk/tools/lib/\nln -s /usr/lib64/libstdc++.so.6  libstdc++", 
+            "title": "Android"
+        }, 
+        {
+            "location": "/linux/ubuntu-setup/#react-native", 
+            "text": "Setup   sudo yarn global add ngork --modules-folder /usr/lib/node_modules\nsudo yarn global add exp --modules-folder /usr/lib/node_modules\nsudo npm install -g create-react-native-app react-native-cli", 
+            "title": "React Native"
+        }, 
+        {
+            "location": "/linux/ubuntu-setup/#installation-cleanup-errors", 
+            "text": "sudo apt update\nsudo apt clean\nsudo apt autoremove\nsudo apt --fix-broken install\nsudo add-apt-repository -r ppa: ppa to remove \ndpkg --list\nsudo apt-get --purge remove gimp\nsudo apt-get autoremove\nsudo apt-get purge --auto-remove gimp\nsudo apt-get clean", 
+            "title": "Installation cleanup, errors"
+        }, 
+        {
+            "location": "/linux/ubuntu-setup/#os-configuration", 
+            "text": "gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'", 
+            "title": "OS Configuration"
+        }, 
+        {
+            "location": "/linux/docker/", 
+            "text": "Docker", 
+            "title": "Docker"
+        }, 
+        {
+            "location": "/linux/docker/#docker", 
+            "text": "", 
+            "title": "Docker"
+        }, 
+        {
+            "location": "/linux/shell/", 
+            "text": "Linux Shell\n\n\nPermissions\n\n\nDirectory navigation\n\n\nServices\n\n\nApplications\n\n\nSystem Recovery\n\n\nFile system\n\n\nPackage manager\n\n\nHardware detection\n\n\nBootloader\n\n\nNetworking", 
+            "title": "Linux shell"
+        }, 
+        {
+            "location": "/linux/shell/#linux-shell", 
+            "text": "", 
+            "title": "Linux Shell"
+        }, 
+        {
+            "location": "/linux/shell/#permissions", 
+            "text": "", 
+            "title": "Permissions"
+        }, 
+        {
+            "location": "/linux/shell/#directory-navigation", 
+            "text": "", 
+            "title": "Directory navigation"
+        }, 
+        {
+            "location": "/linux/shell/#services", 
+            "text": "", 
+            "title": "Services"
+        }, 
+        {
+            "location": "/linux/shell/#applications", 
+            "text": "", 
+            "title": "Applications"
+        }, 
+        {
+            "location": "/linux/shell/#system-recovery", 
+            "text": "", 
+            "title": "System Recovery"
+        }, 
+        {
+            "location": "/linux/shell/#file-system", 
+            "text": "", 
+            "title": "File system"
+        }, 
+        {
+            "location": "/linux/shell/#package-manager", 
+            "text": "", 
+            "title": "Package manager"
+        }, 
+        {
+            "location": "/linux/shell/#hardware-detection", 
+            "text": "", 
+            "title": "Hardware detection"
+        }, 
+        {
+            "location": "/linux/shell/#bootloader", 
+            "text": "", 
+            "title": "Bootloader"
+        }, 
+        {
+            "location": "/linux/shell/#networking", 
+            "text": "", 
+            "title": "Networking"
+        }, 
+        {
+            "location": "/linux/cloud-server/", 
+            "text": "Server configuration\n\n\nServer provisioning\n\n\nSSH access\n\n\nPort access and DNS management\n\n\nCredential management\n\n\nPackages\n\n\nBase packages\n\n\n\n\nsudo apt update \n sudo apt dist-upgrade \n sudo apt autoremove\n\n\nsudo apt -y install gcc make linux-headers-$(uname -r) dkms\n\n\nsudo apt install -y build-essential autoconf automake python-dev curl\n\n\n\n\nDocker\n\n\nnginx\n\n\napache2\n\n\nMaintenance\n\n\nDB Backup \n Restore\n\n\nAutomation scripts\n\n\nLoad balancing", 
+            "title": "Cloud Server"
+        }, 
+        {
+            "location": "/linux/cloud-server/#server-configuration", 
+            "text": "", 
+            "title": "Server configuration"
+        }, 
+        {
+            "location": "/linux/cloud-server/#server-provisioning", 
+            "text": "", 
+            "title": "Server provisioning"
+        }, 
+        {
+            "location": "/linux/cloud-server/#ssh-access", 
+            "text": "", 
+            "title": "SSH access"
+        }, 
+        {
+            "location": "/linux/cloud-server/#port-access-and-dns-management", 
+            "text": "", 
+            "title": "Port access and DNS management"
+        }, 
+        {
+            "location": "/linux/cloud-server/#credential-management", 
+            "text": "", 
+            "title": "Credential management"
+        }, 
+        {
+            "location": "/linux/cloud-server/#packages", 
+            "text": "", 
+            "title": "Packages"
+        }, 
+        {
+            "location": "/linux/cloud-server/#base-packages", 
+            "text": "sudo apt update   sudo apt dist-upgrade   sudo apt autoremove  sudo apt -y install gcc make linux-headers-$(uname -r) dkms  sudo apt install -y build-essential autoconf automake python-dev curl", 
+            "title": "Base packages"
+        }, 
+        {
+            "location": "/linux/cloud-server/#docker", 
+            "text": "", 
+            "title": "Docker"
+        }, 
+        {
+            "location": "/linux/cloud-server/#nginx", 
+            "text": "", 
+            "title": "nginx"
+        }, 
+        {
+            "location": "/linux/cloud-server/#apache2", 
+            "text": "", 
+            "title": "apache2"
+        }, 
+        {
+            "location": "/linux/cloud-server/#maintenance", 
+            "text": "", 
+            "title": "Maintenance"
+        }, 
+        {
+            "location": "/linux/cloud-server/#db-backup-restore", 
+            "text": "", 
+            "title": "DB Backup &amp; Restore"
+        }, 
+        {
+            "location": "/linux/cloud-server/#automation-scripts", 
+            "text": "", 
+            "title": "Automation scripts"
+        }, 
+        {
+            "location": "/linux/cloud-server/#load-balancing", 
+            "text": "", 
+            "title": "Load balancing"
+        }, 
+        {
+            "location": "/graphql/", 
+            "text": "GraphQL", 
+            "title": "GraphqQL"
+        }, 
+        {
+            "location": "/graphql/#graphql", 
+            "text": "", 
+            "title": "GraphQL"
+        }, 
+        {
+            "location": "/firebase/", 
+            "text": "Firebase", 
+            "title": "Firebase"
+        }, 
+        {
+            "location": "/firebase/#firebase", 
+            "text": "", 
+            "title": "Firebase"
+        }, 
+        {
+            "location": "/d3js/", 
+            "text": "D3js", 
+            "title": "D3js"
+        }, 
+        {
+            "location": "/d3js/#d3js", 
+            "text": "", 
+            "title": "D3js"
+        }, 
+        {
+            "location": "/hacker/", 
+            "text": "Hacker", 
+            "title": "Hacker"
+        }, 
+        {
+            "location": "/hacker/#hacker", 
+            "text": "", 
+            "title": "Hacker"
+        }, 
+        {
+            "location": "/react/", 
+            "text": "React", 
+            "title": "React"
+        }, 
+        {
+            "location": "/react/#react", 
+            "text": "", 
+            "title": "React"
+        }, 
+        {
+            "location": "/react-native/", 
+            "text": "React Native", 
+            "title": "React Native"
+        }, 
+        {
+            "location": "/react-native/#react-native", 
+            "text": "", 
+            "title": "React Native"
+        }, 
+        {
+            "location": "/windows/", 
+            "text": "Windows Setup", 
+            "title": "Windows"
+        }, 
+        {
+            "location": "/windows/#windows-setup", 
+            "text": "", 
+            "title": "Windows Setup"
+        }
+    ]
+}

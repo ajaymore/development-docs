@@ -1,0 +1,17 @@
+site_name: My Docs
+theme:
+  name: 'material'
+pages:
+  - Home: 'index.md'
+  - Linux:
+    - 'Ubuntu setup': 'linux/ubuntu-setup.md'
+    - 'Docker': 'linux/docker.md'
+    - 'Linux shell': 'linux/shell.md'
+    - 'Cloud Server': 'linux/cloud-server.md'
+  - GraphqQL: 'graphql.md'
+  - Firebase: 'firebase.md'
+  - D3js: 'd3js.md'
+  - Hacker: 'hacker.md'
+  - React: 'react.md'
+  - React Native: 'react-native.md'
+  - Windows: 'windows.md'
