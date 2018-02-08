@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Building documentation with MKDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nInstallation\n\n\n\n\nsudo pip install mkdocs\n\n\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "text": "Building documentation with MKDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nInstallation\n\n\n\n\nsudo pip install mkdocs\n\n\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.\n\n\n\nYou can use the \neditor on GitHub\n to maintain and preview the content for your website in Markdown files.", 
             "title": "Home"
         }, 
         {
@@ -22,7 +22,7 @@
         }, 
         {
             "location": "/#project-layout", 
-            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.  You can use the  editor on GitHub  to maintain and preview the content for your website in Markdown files.", 
             "title": "Project layout"
         }, 
         {
