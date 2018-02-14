@@ -27,7 +27,7 @@
         }, 
         {
             "location": "/linux/ubuntu-setup/", 
-            "text": "Ubuntu Setup\n\n\n\n\nOS is installed through live CD\n\n\n\n\nPackages\n\n\nBase packages\n\n\n\n\nsudo apt update \n sudo apt dist-upgrade \n sudo apt autoremove\n\n\nsudo apt -y install gcc make linux-headers-$(uname -r) dkms\n\n\nsudo apt install -y exfat-fuse exfat-utils build-essential autoconf automake python-dev youtube-dl curl net-tools vim lib64stdc++6:i386 mesa-utils libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386\n\n\n\n\nApplications\n\n\n\n\nInstall chrome, vscode, telegram, robomongo\n\n\n\n\nDevelopment Environment\n\n\nEditors\n\n\n\n\nSublime\n\n\nVSCode\n\n\n\n\n# install consolas font\nsudo apt install -y font-manager cabextract\nwget https://github.com/kakkoyun/linux.files/raw/master/fonts/Consolas.ttf\n\n Install using font manager\n# VS Code - prettier, python, kary-light\n{\n  \neditor.formatOnSave\n: true,\n  \nwindow.zoomLevel\n: 0,\n  \neditor.fontFamily\n: \nCONSOLAS\n,\n  \nworkbench.colorTheme\n: \nKary \uff0d Light\n,\n  \nprettier.eslintIntegration\n: true,\n  \nprettier.singleQuote\n: true\n}\n\n\n\n\n\nNodejs\n\n\n\n\nNodejs\n\n\nYarn\n\n\nWatchman \n./configure --enable-lenient\n\n\n\n\necho 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_watches  \n echo 999999 | sudo tee -a  /proc/sys/fs/inotify/max_queued_events \n echo 999999 | sudo tee  -a /proc/sys/fs/inotify/max_user_instances \n watchman  shutdown-server\nwatchman watch-del-all\nwatchman shutdown-server\nsudo lsof -i :8081\nkill -9 23583\n\n\n\n\nDocker\n\n\n\n\nDocker\n\n\nDocker-compose\n\n\n\n\nsudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose\nsudo chmod +x /usr/local/bin/docker-compose\n\n\n\n\n\n\nPost docker installation\n\n\nVirtualbox\n \n\n\n\n\nsudo sh -c 'echo \ndeb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib\n \n /etc/apt/sources.list'\nsudo apt-key add oracle_vbox_2016.asc\nsudo apt-key add oracle_vbox.asc\nsudo apt update\nsudo apt install -y virtualbox-5.2\nVBoxManage -v\n\n\n\n\nAndroid\n\n\n\n\nJdk\n\n\nAndroid Studio\n\n\nEmulation\n\n\n\n\nvim ~/.bashrc\nADD export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1\nsource ~/.bashrc\ncd ~/Android/Sdk/tools/lib/\nln -s /usr/lib64/libstdc++.so.6  libstdc++\n\n\n\n\nReact Native\n\n\n\n\nSetup\n\n\n\n\nsudo yarn global add ngork --modules-folder /usr/lib/node_modules\nsudo yarn global add exp --modules-folder /usr/lib/node_modules\nsudo npm install -g create-react-native-app react-native-cli\n\n\n\n\nInstallation cleanup, errors\n\n\nsudo apt update\nsudo apt clean\nsudo apt autoremove\nsudo apt --fix-broken install\nsudo add-apt-repository -r ppa:\nppa to remove\n\ndpkg --list\nsudo apt-get --purge remove gimp\nsudo apt-get autoremove\nsudo apt-get purge --auto-remove gimp\nsudo apt-get clean\n\n\n\n\nOS Configuration\n\n\n\n\ngsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'", 
+            "text": "Ubuntu Setup\n\n\n\n\nOS is installed through live CD\n\n\n\n\nPackages\n\n\nBase packages\n\n\n\n\nsudo apt update \n sudo apt dist-upgrade \n sudo apt autoremove\n\n\nsudo apt -y install gcc make linux-headers-$(uname -r) dkms\n\n\nsudo apt install -y exfat-fuse exfat-utils build-essential autoconf automake python-dev youtube-dl curl net-tools vim lib64stdc++6:i386 mesa-utils libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386\n\n\n\n\nApplications\n\n\n\n\nInstall chrome, vscode, telegram, robomongo\n\n\n\n\nDevelopment Environment\n\n\nEditors\n\n\n\n\nSublime\n\n\nVSCode\n\n\n\n\n# install consolas font\nsudo apt install -y font-manager cabextract\nwget https://github.com/kakkoyun/linux.files/raw/master/fonts/Consolas.ttf\n\n Install using font manager\n# VS Code - prettier, python, kary-light\n{\n  \neditor.formatOnSave\n: true,\n  \nwindow.zoomLevel\n: 0,\n  \neditor.fontFamily\n: \nCONSOLAS\n,\n  \nworkbench.colorTheme\n: \nKary \uff0d Light\n,\n  \nprettier.eslintIntegration\n: true,\n  \nprettier.singleQuote\n: true\n}\n\n\n\n\n\nNodejs\n\n\n\n\nNodejs\n\n\nYarn\n\n\nWatchman \n./configure --enable-lenient\n\n\n\n\necho 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_watches  \n echo 999999 | sudo tee -a  /proc/sys/fs/inotify/max_queued_events \n echo 999999 | sudo tee  -a /proc/sys/fs/inotify/max_user_instances \n watchman  shutdown-server\nwatchman watch-del-all\nwatchman shutdown-server\nsudo lsof -i :8081\nkill -9 23583\n\n\n\n\n\n\nPackages\n\n\n\n\nnpm install express-generator graphcool nodemon babel-cli -g\n\n\n\n\nDocker\n\n\n\n\nDocker\n\n\nDocker-compose\n\n\n\n\nsudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose\nsudo chmod +x /usr/local/bin/docker-compose\n\n\n\n\n\n\nPost docker installation\n\n\nVirtualbox\n \n\n\n\n\nsudo sh -c 'echo \ndeb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib\n \n /etc/apt/sources.list'\nsudo apt-key add oracle_vbox_2016.asc\nsudo apt-key add oracle_vbox.asc\nsudo apt update\nsudo apt install -y virtualbox-5.2\nVBoxManage -v\n\n\n\n\nAndroid\n\n\n\n\nJdk\n\n\nAndroid Studio\n\n\nEmulation\n\n\n\n\nvim ~/.bashrc\nADD export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1\nsource ~/.bashrc\ncd ~/Android/Sdk/tools/lib/\nln -s /usr/lib64/libstdc++.so.6  libstdc++\n\n\n\n\nRaspbian emulation\n\n\nInstructions\n\n\nsudo apt install qemu\ngit clone https://github.com/dhruvvyas90/qemu-rpi-kernel.git  \nqemu-img convert -f raw -O qcow2 2017-08-16-raspbian-stretch-lite.img raspbian-stretch-lite.qcow  \nqemu-img resize raspbian-stretch-lite.qcow +6G  \n\nsudo qemu-system-arm \\\n-kernel ./kernel-qemu-4.4.34-jessie \\\n-append \nroot=/dev/sda2 panic=1 rootfstype=ext4 rw\n \\\n-hda raspbian-stretch-lite.qcow \\\n-cpu arm1176 -m 256 \\\n-machine versatilepb \\\n-no-reboot \\\n-serial stdio \\\n-net nic -net user \\\n-net tap,ifname=vnet0,script=no,downscript=no\n\n#login pi/raspberry\nsudo raspi-config\nsudo apt install lightmd\n\n\n\n\nReact Native\n\n\n\n\nSetup\n\n\n\n\nsudo yarn global add ngork --modules-folder /usr/lib/node_modules\nsudo yarn global add exp --modules-folder /usr/lib/node_modules\nsudo npm install -g create-react-native-app react-native-cli\n\n\n\n\nInstallation cleanup, errors\n\n\nsudo apt update\nsudo apt clean\nsudo apt autoremove\nsudo apt --fix-broken install\nsudo add-apt-repository -r ppa:\nppa to remove\n\ndpkg --list\nsudo apt-get --purge remove gimp\nsudo apt-get autoremove\nsudo apt-get purge --auto-remove gimp\nsudo apt-get clean\n\n\n\n\nOS Configuration\n\n\n\n\ngsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'", 
             "title": "Ubuntu setup"
         }, 
         {
@@ -62,7 +62,7 @@
         }, 
         {
             "location": "/linux/ubuntu-setup/#nodejs", 
-            "text": "Nodejs  Yarn  Watchman  ./configure --enable-lenient   echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_watches    echo 999999 | sudo tee -a  /proc/sys/fs/inotify/max_queued_events   echo 999999 | sudo tee  -a /proc/sys/fs/inotify/max_user_instances   watchman  shutdown-server\nwatchman watch-del-all\nwatchman shutdown-server\nsudo lsof -i :8081\nkill -9 23583", 
+            "text": "Nodejs  Yarn  Watchman  ./configure --enable-lenient   echo 999999 | sudo tee -a /proc/sys/fs/inotify/max_user_watches    echo 999999 | sudo tee -a  /proc/sys/fs/inotify/max_queued_events   echo 999999 | sudo tee  -a /proc/sys/fs/inotify/max_user_instances   watchman  shutdown-server\nwatchman watch-del-all\nwatchman shutdown-server\nsudo lsof -i :8081\nkill -9 23583   Packages   npm install express-generator graphcool nodemon babel-cli -g", 
             "title": "Nodejs"
         }, 
         {
@@ -74,6 +74,11 @@
             "location": "/linux/ubuntu-setup/#android", 
             "text": "Jdk  Android Studio  Emulation   vim ~/.bashrc\nADD export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1\nsource ~/.bashrc\ncd ~/Android/Sdk/tools/lib/\nln -s /usr/lib64/libstdc++.so.6  libstdc++", 
             "title": "Android"
+        }, 
+        {
+            "location": "/linux/ubuntu-setup/#raspbian-emulation", 
+            "text": "Instructions  sudo apt install qemu\ngit clone https://github.com/dhruvvyas90/qemu-rpi-kernel.git  \nqemu-img convert -f raw -O qcow2 2017-08-16-raspbian-stretch-lite.img raspbian-stretch-lite.qcow  \nqemu-img resize raspbian-stretch-lite.qcow +6G  \n\nsudo qemu-system-arm \\\n-kernel ./kernel-qemu-4.4.34-jessie \\\n-append  root=/dev/sda2 panic=1 rootfstype=ext4 rw  \\\n-hda raspbian-stretch-lite.qcow \\\n-cpu arm1176 -m 256 \\\n-machine versatilepb \\\n-no-reboot \\\n-serial stdio \\\n-net nic -net user \\\n-net tap,ifname=vnet0,script=no,downscript=no\n\n#login pi/raspberry\nsudo raspi-config\nsudo apt install lightmd", 
+            "title": "Raspbian emulation"
         }, 
         {
             "location": "/linux/ubuntu-setup/#react-native", 
@@ -92,13 +97,33 @@
         }, 
         {
             "location": "/linux/docker/", 
-            "text": "Docker", 
+            "text": "Docker\n\n\nCopy files from host to running container\n\n\ndocker cp foo.txt mycontainer:/foo.txt\ndocker cp mycontainer:/foo.txt foo.txt\n\n# Multiple files contained by the folder src can be copied into the target folder using:\n\ndocker cp src/. mycontainer:/target\ndocker cp mycontainer:/src/. target\n\n\n\n\nRun command inside running container\n\n\ndocker exec -it container_id bash\n\n\nSCP\n\n\nscp -i parallel-learning.pem -r ec2-user@12.23.33.33:/home/ec2-user/mongo/ /home/ubuntu/keys/data\n\nscp -i parallel-learning.pem -r /home/ubuntu/keys/data/mongo/12-15-17/parallel-learning-video-services/ ubuntu@12.23.33.33:/home/ubuntu/parallel-learning-video-services/\n\n\n\n\nMongoDB\n\n\nsudo mongodump --db parallel-learning-video-services --out /home/ec2-user/mongo/`date +\n%m-%d-%y\n` --username dineshsune --password \n2439789fdseold98954\n\n\nmongo --port 27017 -u \ndineshsune\n -p \n2439789fdseold98954\n --authenticationDatabase \nparallel-learning-video-services\n\n\nsudo mongorestore --db parallel-learning-video-services --drop /home/ubuntu/parallel-learning-video-services/parallel-learning-video-services/", 
             "title": "Docker"
         }, 
         {
             "location": "/linux/docker/#docker", 
             "text": "", 
             "title": "Docker"
+        }, 
+        {
+            "location": "/linux/docker/#copy-files-from-host-to-running-container", 
+            "text": "docker cp foo.txt mycontainer:/foo.txt\ndocker cp mycontainer:/foo.txt foo.txt\n\n# Multiple files contained by the folder src can be copied into the target folder using:\n\ndocker cp src/. mycontainer:/target\ndocker cp mycontainer:/src/. target", 
+            "title": "Copy files from host to running container"
+        }, 
+        {
+            "location": "/linux/docker/#run-command-inside-running-container", 
+            "text": "docker exec -it container_id bash", 
+            "title": "Run command inside running container"
+        }, 
+        {
+            "location": "/linux/docker/#scp", 
+            "text": "scp -i parallel-learning.pem -r ec2-user@12.23.33.33:/home/ec2-user/mongo/ /home/ubuntu/keys/data\n\nscp -i parallel-learning.pem -r /home/ubuntu/keys/data/mongo/12-15-17/parallel-learning-video-services/ ubuntu@12.23.33.33:/home/ubuntu/parallel-learning-video-services/", 
+            "title": "SCP"
+        }, 
+        {
+            "location": "/linux/docker/#mongodb", 
+            "text": "sudo mongodump --db parallel-learning-video-services --out /home/ec2-user/mongo/`date + %m-%d-%y ` --username dineshsune --password  2439789fdseold98954 \n\nmongo --port 27017 -u  dineshsune  -p  2439789fdseold98954  --authenticationDatabase  parallel-learning-video-services \n\nsudo mongorestore --db parallel-learning-video-services --drop /home/ubuntu/parallel-learning-video-services/parallel-learning-video-services/", 
+            "title": "MongoDB"
         }, 
         {
             "location": "/linux/shell/", 
@@ -162,7 +187,7 @@
         }, 
         {
             "location": "/linux/cloud-server/", 
-            "text": "Server configuration\n\n\nServer provisioning\n\n\nSSH access\n\n\nPort access and DNS management\n\n\nCredential management\n\n\nPackages\n\n\nBase packages\n\n\n\n\nsudo apt update \n sudo apt dist-upgrade \n sudo apt autoremove\n\n\nsudo apt -y install gcc make linux-headers-$(uname -r) dkms\n\n\nsudo apt install -y build-essential autoconf automake python-dev curl\n\n\n\n\nDocker\n\n\nnginx\n\n\napache2\n\n\nMaintenance\n\n\nDB Backup \n Restore\n\n\nAutomation scripts\n\n\nLoad balancing", 
+            "text": "Server configuration\n\n\nServer provisioning\n\n\nSSH access\n\n\nPort access and DNS management\n\n\nCredential management\n\n\nPackages\n\n\nBase packages\n\n\n\n\nsudo apt update \n sudo apt dist-upgrade \n sudo apt autoremove\n\n\nsudo apt -y install gcc make linux-headers-$(uname -r) dkms\n\n\nsudo apt install -y build-essential autoconf automake python-dev curl\n\n\n\n\nDocker\n\n\nnginx\n\n\napache2\n\n\n# create conf file -\n lms.abc.com -\n provide docker proxy pass\n# get conf to work with application on http\n# get conf to work with application on https\nmoodle, wordpress, nodejs app\n\n\n\n\n\nMaintenance\n\n\nDB Backup \n Restore\n\n\nAutomation scripts\n\n\nLoad balancing", 
             "title": "Cloud Server"
         }, 
         {
@@ -212,7 +237,7 @@
         }, 
         {
             "location": "/linux/cloud-server/#apache2", 
-            "text": "", 
+            "text": "# create conf file -  lms.abc.com -  provide docker proxy pass\n# get conf to work with application on http\n# get conf to work with application on https\nmoodle, wordpress, nodejs app", 
             "title": "apache2"
         }, 
         {
@@ -237,7 +262,7 @@
         }, 
         {
             "location": "/graphql/", 
-            "text": "GraphQL", 
+            "text": "GraphQL\n\n\nEnvironment\n\n\nStack", 
             "title": "GraphqQL"
         }, 
         {
@@ -246,14 +271,49 @@
             "title": "GraphQL"
         }, 
         {
+            "location": "/graphql/#environment", 
+            "text": "", 
+            "title": "Environment"
+        }, 
+        {
+            "location": "/graphql/#stack", 
+            "text": "", 
+            "title": "Stack"
+        }, 
+        {
             "location": "/firebase/", 
-            "text": "Firebase", 
+            "text": "Firebase\n\n\nCreate project through firebase console\n\n\nLocal project Setup\n\n\nmkdir firebase-boilerplate \n cd firebase-boilerplate\nexp init MobileClient\ncreate-react-app webclient\nfirebase init\n\n\n\n\nServer setup\n\n\nMobileClient\n\n\nWebClient", 
             "title": "Firebase"
         }, 
         {
             "location": "/firebase/#firebase", 
             "text": "", 
             "title": "Firebase"
+        }, 
+        {
+            "location": "/firebase/#create-project-through-firebase-console", 
+            "text": "", 
+            "title": "Create project through firebase console"
+        }, 
+        {
+            "location": "/firebase/#local-project-setup", 
+            "text": "mkdir firebase-boilerplate   cd firebase-boilerplate\nexp init MobileClient\ncreate-react-app webclient\nfirebase init", 
+            "title": "Local project Setup"
+        }, 
+        {
+            "location": "/firebase/#server-setup", 
+            "text": "", 
+            "title": "Server setup"
+        }, 
+        {
+            "location": "/firebase/#mobileclient", 
+            "text": "", 
+            "title": "MobileClient"
+        }, 
+        {
+            "location": "/firebase/#webclient", 
+            "text": "", 
+            "title": "WebClient"
         }, 
         {
             "location": "/d3js/", 
@@ -277,7 +337,7 @@
         }, 
         {
             "location": "/react/", 
-            "text": "React", 
+            "text": "React\n\n\nPackages\n\n\nMaterial-ui\n\n\nFabric ui react\n\n\nsemantic-ui-react\n\n\nReact-Router\n\n\nReact-fns\n\n\nApollo-client\n\n\nReact Redux\n\n\naxios\n\n\n\n\nBuild complex ui animations\n- scene animation\n\n\n\n\n\n\nAnimated\nReact Motion\n\n\nthree.js\nd3.js\ncanvas\n\n\nExpertise - \n\n\nJS language\nDatastrctures\nBasic Algorithms\nDesign patterns\n\n\nUI, UX Design\nAnimation\nClient data storage\n\n\nReactJS API\nThreeJS API\nAnimated\nReact Motion\nReact Router\n\n\nBlockchain\nData Science\nArtificial Intelligence\nHacking\n\n\nRegular Reading and updates\n\n\nLinux operating system\nUser Interfaces - UX, UI\n    - Layouts\n    - Animations\n    - Transitions\n    - Interactions\n\n\nFabric UI React\n\n\nYou need to have nodejs installed on your computer to continue with this video.\nOpen your terminal and type npm install -g create-react-app or if you have yarn with nodejs then type yarn global add create-react-app\n\n\ncreate-react-app thin-fabric\ncd thing fabric\nyarn start\n\n\ncreate college elections app\n\n\ncreate-react-app\nfabric-ui-setup\nconfigure-login\n\n\n\n\nput up the video on youtube\n\n\nSubmit it to egghead.io\n\n\n\n\nPut up multiple such\n\n\n\n\nGoogle drive integration through react native\n\n\nUsing react-fns\n\n\nprisma graphql introduction\n\n\nmaterial-ui@next introduction\n\n\nReact native signature\n\n\nfirebase phone authentication with react-native\n\n\nUsing firestore for your app data\n\n\nUsing d3js with React\n\n\nintegrate google maps api into React\n\n\nManage forms using formik\n\n\nhtml5 canvas paint app\n\n\nfirebase authentication with react-native\n\n\n\n\n\n\n\n\nbuild a polygon rating component using React\n\n\n\n\nbuild student elections app with fabric ui\n\n\nbuild student placements app with material-ui@next\n\n\nReact-Native application with prisma graphql\n\n\n3d modelling with Three.js\n\n\niBeacon with React-Native\n\n\n\n\nFirebase + ReactJS\n\n\nEvents\nMeal Planner\nStudents\nMarathi Tech tutorials\n\n\nTechnology Consulting\n- Policy, Research, Advocacy, Education, Laws\n\n\nDevelopment\n- Education, Politics\n\n\nReactJS Industry trainer", 
             "title": "React"
         }, 
         {
@@ -286,8 +346,68 @@
             "title": "React"
         }, 
         {
+            "location": "/react/#packages", 
+            "text": "", 
+            "title": "Packages"
+        }, 
+        {
+            "location": "/react/#material-ui", 
+            "text": "", 
+            "title": "Material-ui"
+        }, 
+        {
+            "location": "/react/#fabric-ui-react", 
+            "text": "", 
+            "title": "Fabric ui react"
+        }, 
+        {
+            "location": "/react/#semantic-ui-react", 
+            "text": "", 
+            "title": "semantic-ui-react"
+        }, 
+        {
+            "location": "/react/#react-router", 
+            "text": "", 
+            "title": "React-Router"
+        }, 
+        {
+            "location": "/react/#react-fns", 
+            "text": "", 
+            "title": "React-fns"
+        }, 
+        {
+            "location": "/react/#apollo-client", 
+            "text": "", 
+            "title": "Apollo-client"
+        }, 
+        {
+            "location": "/react/#react-redux", 
+            "text": "", 
+            "title": "React Redux"
+        }, 
+        {
+            "location": "/react/#axios", 
+            "text": "Build complex ui animations", 
+            "title": "axios"
+        }, 
+        {
+            "location": "/react/#-scene-animation", 
+            "text": "Animated\nReact Motion  three.js\nd3.js\ncanvas  Expertise -   JS language\nDatastrctures\nBasic Algorithms\nDesign patterns  UI, UX Design\nAnimation\nClient data storage  ReactJS API\nThreeJS API\nAnimated\nReact Motion\nReact Router  Blockchain\nData Science\nArtificial Intelligence\nHacking", 
+            "title": "- scene animation"
+        }, 
+        {
+            "location": "/react/#regular-reading-and-updates", 
+            "text": "Linux operating system\nUser Interfaces - UX, UI\n    - Layouts\n    - Animations\n    - Transitions\n    - Interactions  Fabric UI React  You need to have nodejs installed on your computer to continue with this video.\nOpen your terminal and type npm install -g create-react-app or if you have yarn with nodejs then type yarn global add create-react-app  create-react-app thin-fabric\ncd thing fabric\nyarn start  create college elections app  create-react-app\nfabric-ui-setup\nconfigure-login   put up the video on youtube  Submit it to egghead.io   Put up multiple such   Google drive integration through react native  Using react-fns  prisma graphql introduction  material-ui@next introduction  React native signature  firebase phone authentication with react-native  Using firestore for your app data  Using d3js with React  integrate google maps api into React  Manage forms using formik  html5 canvas paint app  firebase authentication with react-native     build a polygon rating component using React   build student elections app with fabric ui  build student placements app with material-ui@next  React-Native application with prisma graphql  3d modelling with Three.js  iBeacon with React-Native", 
+            "title": "Regular Reading and updates"
+        }, 
+        {
+            "location": "/react/#firebase-reactjs", 
+            "text": "Events\nMeal Planner\nStudents\nMarathi Tech tutorials  Technology Consulting\n- Policy, Research, Advocacy, Education, Laws  Development\n- Education, Politics  ReactJS Industry trainer", 
+            "title": "Firebase + ReactJS"
+        }, 
+        {
             "location": "/react-native/", 
-            "text": "React Native", 
+            "text": "React Native\n\n\nExpo\n\n\nPackages\n\n\nReact Navigation\n\n\nReact Native Typography\n\n\nDocumentation\n\n\nimport { material } from 'react-native-typography'\n\n\nText style={material.display1}\nHello Typography!\n/Text\n\ndisplay1-4, headline, title, subheading, body2, body1, caption, button\n\nimport { systemWeights } from 'react-native-typography'\nthin, light, regular, semibold, bold\n\nimport { iOSColors } from 'react-native-typography'\nred, orange, yellow, green, blue, tealblue, purple, pink, white, customGray, lightGray, lightGray2, midGray, gray black\n\n\n\n\nReact Native Elements\n\n\nReact Video\n\n\nReact Signature\n\n\nReact Motion\n\n\nReact Native Icons\n\n\nStyled Components\n\n\nDocumentation\n\n\nimport styled from \nstyled-components\n;\n\nconst StyledView = styled.View`\n  background-color: papayawhip;\n`;\n\nconst StyledText = styled.Text`\n  color: palevioletred;\n`;\n\nconst Button = styled.button`\n  /* Adapt the colours based on primary prop */\n  background: ${props =\n props.primary ? 'palevioletred' : 'white'};\n  color: ${props =\n props.primary ? 'white' : 'palevioletred'};\n\n  font-size: 1em;\n  margin: 1em;\n  padding: 0.25em 1em;\n  border: 2px solid palevioletred;\n  border-radius: 3px;\n`;", 
             "title": "React Native"
         }, 
         {
@@ -296,14 +416,94 @@
             "title": "React Native"
         }, 
         {
+            "location": "/react-native/#expo", 
+            "text": "", 
+            "title": "Expo"
+        }, 
+        {
+            "location": "/react-native/#packages", 
+            "text": "", 
+            "title": "Packages"
+        }, 
+        {
+            "location": "/react-native/#react-navigation", 
+            "text": "", 
+            "title": "React Navigation"
+        }, 
+        {
+            "location": "/react-native/#react-native-typography", 
+            "text": "Documentation  import { material } from 'react-native-typography' Text style={material.display1} Hello Typography! /Text \ndisplay1-4, headline, title, subheading, body2, body1, caption, button\n\nimport { systemWeights } from 'react-native-typography'\nthin, light, regular, semibold, bold\n\nimport { iOSColors } from 'react-native-typography'\nred, orange, yellow, green, blue, tealblue, purple, pink, white, customGray, lightGray, lightGray2, midGray, gray black", 
+            "title": "React Native Typography"
+        }, 
+        {
+            "location": "/react-native/#react-native-elements", 
+            "text": "", 
+            "title": "React Native Elements"
+        }, 
+        {
+            "location": "/react-native/#react-video", 
+            "text": "", 
+            "title": "React Video"
+        }, 
+        {
+            "location": "/react-native/#react-signature", 
+            "text": "", 
+            "title": "React Signature"
+        }, 
+        {
+            "location": "/react-native/#react-motion", 
+            "text": "", 
+            "title": "React Motion"
+        }, 
+        {
+            "location": "/react-native/#react-native-icons", 
+            "text": "", 
+            "title": "React Native Icons"
+        }, 
+        {
+            "location": "/react-native/#styled-components", 
+            "text": "Documentation  import styled from  styled-components ;\n\nconst StyledView = styled.View`\n  background-color: papayawhip;\n`;\n\nconst StyledText = styled.Text`\n  color: palevioletred;\n`;\n\nconst Button = styled.button`\n  /* Adapt the colours based on primary prop */\n  background: ${props =  props.primary ? 'palevioletred' : 'white'};\n  color: ${props =  props.primary ? 'white' : 'palevioletred'};\n\n  font-size: 1em;\n  margin: 1em;\n  padding: 0.25em 1em;\n  border: 2px solid palevioletred;\n  border-radius: 3px;\n`;", 
+            "title": "Styled Components"
+        }, 
+        {
             "location": "/windows/", 
-            "text": "Windows Setup", 
+            "text": "Windows Setup\n\n\n\n\nInstall windows.iso [Rufus \n gpt \n NTFS] {Secure boot off uefi}\n\n\nInstall softwares in folder\n\n\nfirefox\n\n\nGit\n\n\nnodejs\n\n\nyarn\n\n\nnpm install --global windows-build-tools\n\n\naudacity\n\n\ngoogle input tools\n\n\niTunes\n\n\nsublime test\n\n\nvlc\n\n\nVS Code\n\n\n(From power shell) Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux\n\n\nInstall ubuntu from store", 
             "title": "Windows"
         }, 
         {
             "location": "/windows/#windows-setup", 
-            "text": "", 
+            "text": "Install windows.iso [Rufus   gpt   NTFS] {Secure boot off uefi}  Install softwares in folder  firefox  Git  nodejs  yarn  npm install --global windows-build-tools  audacity  google input tools  iTunes  sublime test  vlc  VS Code  (From power shell) Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux  Install ubuntu from store", 
             "title": "Windows Setup"
+        }, 
+        {
+            "location": "/stacks/", 
+            "text": "Application Stack\n\n\n\n\nAi\n\n\nBlockchain\n\n\nRaspbery pi for education\n\n\nEthical hacking\n\n\nDesktop, mobile, web, VR clients\n\n\nAPI Server\n\n\n\n\nLanguages\n\n\n\n\nPython\n\n\nPHP\n\n\nJavascript\n\n\nJava\n\n\nSwift\n\n\n\n\nTools, frameworks \n libraries\n\n\n\n\nDocker\n\n\nReact\n\n\nReact-Native\n\n\nElectron\n\n\nAndroid\n\n\niOS\n\n\nGraphcool\n\n\nWordpress\n\n\nFirebase\n\n\nD3js\n\n\n\n\nOperating Systems\n\n\n\n\nUbuntu\n\n\nRaspbian\n\n\nKali Linux\n\n\nWindows 10\n\n\nMac OS\n\n\n\n\nExternal hardware \n services\n\n\n\n\nGPS\n\n\nMaps\n\n\nMobile Auth\n\n\nOauth\n\n\nCloud APIs", 
+            "title": "Dev Stacks"
+        }, 
+        {
+            "location": "/stacks/#application-stack", 
+            "text": "Ai  Blockchain  Raspbery pi for education  Ethical hacking  Desktop, mobile, web, VR clients  API Server", 
+            "title": "Application Stack"
+        }, 
+        {
+            "location": "/stacks/#languages", 
+            "text": "Python  PHP  Javascript  Java  Swift", 
+            "title": "Languages"
+        }, 
+        {
+            "location": "/stacks/#tools-frameworks-libraries", 
+            "text": "Docker  React  React-Native  Electron  Android  iOS  Graphcool  Wordpress  Firebase  D3js", 
+            "title": "Tools, frameworks &amp; libraries"
+        }, 
+        {
+            "location": "/stacks/#operating-systems", 
+            "text": "Ubuntu  Raspbian  Kali Linux  Windows 10  Mac OS", 
+            "title": "Operating Systems"
+        }, 
+        {
+            "location": "/stacks/#external-hardware-services", 
+            "text": "GPS  Maps  Mobile Auth  Oauth  Cloud APIs", 
+            "title": "External hardware &amp; services"
         }
     ]
 }

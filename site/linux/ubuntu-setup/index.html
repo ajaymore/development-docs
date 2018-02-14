@@ -283,6 +283,19 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspbian-emulation" title="Raspbian emulation" class="md-nav__link">
+    Raspbian emulation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#react-native" title="React Native" class="md-nav__link">
     React Native
@@ -448,6 +461,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../stacks/" title="Dev Stacks" class="md-nav__link">
+      Dev Stacks
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -525,6 +550,19 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspbian-emulation" title="Raspbian emulation" class="md-nav__link">
+    Raspbian emulation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#react-native" title="React Native" class="md-nav__link">
@@ -622,6 +660,12 @@ sudo lsof -i :8081
 kill -9 23583
 </code></pre>
 
+<ul>
+<li>Packages</li>
+</ul>
+<pre><code>npm install express-generator graphcool nodemon babel-cli -g
+</code></pre>
+
 <h4 id="docker">Docker</h4>
 <ul>
 <li><a href="https://gist.github.com/levsthings/0a49bfe20b25eeadd61ff0e204f50088">Docker</a></li>
@@ -654,6 +698,29 @@ ADD export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
 source ~/.bashrc
 cd ~/Android/Sdk/tools/lib/
 ln -s /usr/lib64/libstdc++.so.6  libstdc++
+</code></pre>
+
+<h3 id="raspbian-emulation">Raspbian emulation</h3>
+<p><a href="https://blog.agchapman.com/using-qemu-to-emulate-a-raspberry-pi/">Instructions</a></p>
+<pre><code>sudo apt install qemu
+git clone https://github.com/dhruvvyas90/qemu-rpi-kernel.git  
+qemu-img convert -f raw -O qcow2 2017-08-16-raspbian-stretch-lite.img raspbian-stretch-lite.qcow  
+qemu-img resize raspbian-stretch-lite.qcow +6G  
+
+sudo qemu-system-arm \
+-kernel ./kernel-qemu-4.4.34-jessie \
+-append &quot;root=/dev/sda2 panic=1 rootfstype=ext4 rw&quot; \
+-hda raspbian-stretch-lite.qcow \
+-cpu arm1176 -m 256 \
+-machine versatilepb \
+-no-reboot \
+-serial stdio \
+-net nic -net user \
+-net tap,ifname=vnet0,script=no,downscript=no
+
+#login pi/raspberry
+sudo raspi-config
+sudo apt install lightmd
 </code></pre>
 
 <h4 id="react-native">React Native</h4>

@@ -45,6 +45,10 @@ watchman shutdown-server
 sudo lsof -i :8081
 kill -9 23583
 ```
+- Packages
+```
+npm install express-generator graphcool nodemon babel-cli -g
+```
 
 #### Docker
 - [Docker](https://gist.github.com/levsthings/0a49bfe20b25eeadd61ff0e204f50088)
@@ -74,6 +78,30 @@ ADD export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
 source ~/.bashrc
 cd ~/Android/Sdk/tools/lib/
 ln -s /usr/lib64/libstdc++.so.6  libstdc++
+```
+
+### Raspbian emulation
+[Instructions](https://blog.agchapman.com/using-qemu-to-emulate-a-raspberry-pi/)
+```
+sudo apt install qemu
+git clone https://github.com/dhruvvyas90/qemu-rpi-kernel.git  
+qemu-img convert -f raw -O qcow2 2017-08-16-raspbian-stretch-lite.img raspbian-stretch-lite.qcow  
+qemu-img resize raspbian-stretch-lite.qcow +6G  
+
+sudo qemu-system-arm \
+-kernel ./kernel-qemu-4.4.34-jessie \
+-append "root=/dev/sda2 panic=1 rootfstype=ext4 rw" \
+-hda raspbian-stretch-lite.qcow \
+-cpu arm1176 -m 256 \
+-machine versatilepb \
+-no-reboot \
+-serial stdio \
+-net nic -net user \
+-net tap,ifname=vnet0,script=no,downscript=no
+
+#login pi/raspberry
+sudo raspi-config
+sudo apt install lightmd
 ```
 
 #### React Native

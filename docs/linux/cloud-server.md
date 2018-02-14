@@ -20,7 +20,13 @@
 ### nginx
 
 ### apache2
+```
+# create conf file -> lms.abc.com -> provide docker proxy pass
+# get conf to work with application on http
+# get conf to work with application on https
+moodle, wordpress, nodejs app
 
+```
 ## Maintenance
 
 ### DB Backup & Restore
