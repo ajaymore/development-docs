@@ -1,5 +1,32 @@
 # Docker
 
+## Dockerfile
+[Documentation](https://docs.docker.com/engine/reference/builder/)
+
+## commands
+```
+
+# Remove untagged images
+docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")
+docker build -t mysticalaj/node-web-app -f prod/Dockerfile . # -t for tagname
+docker images
+docker run -p 8000:8000 -d mysticalaj/node-web-app -e PORT=8000
+docker ps
+docker logs <container id>
+docker exec -it <container id> /bin/bash
+docker stop container_id
+docker rm container_id
+docker image rm image_name
+```
+
+## docker-compose commands
+```
+sudo chown -R $USER:$USER . # Setting volume permissions
+docker-compose build # also to rebuild
+docker-compose up # Run all containers
+docker-compose run web npm install cors
+```
+
 ## Copy files from host to running container
 ```
 docker cp foo.txt mycontainer:/foo.txt
@@ -29,3 +56,19 @@ mongo --port 27017 -u "dineshsune" -p "2439789fdseold98954" --authenticationData
 
 sudo mongorestore --db parallel-learning-video-services --drop /home/ubuntu/parallel-learning-video-services/parallel-learning-video-services/
 ```
+
+
+docker run -it image_id /bin/bash
+apt update
+exit
+docker commit container_id newimage_name
+firebase login --no-localhost
+
+
+server ---
+
+express, graphql, reactjs, mongodb -- +++
+
+react-native
+-- mobile auth -> firebase | any other
+-- 

@@ -238,6 +238,27 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#dockerfile" title="Dockerfile" class="md-nav__link">
+    Dockerfile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" title="commands" class="md-nav__link">
+    commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-compose-commands" title="docker-compose commands" class="md-nav__link">
+    docker-compose commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#copy-files-from-host-to-running-container" title="Copy files from host to running container" class="md-nav__link">
     Copy files from host to running container
   </a>
@@ -420,6 +441,27 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#dockerfile" title="Dockerfile" class="md-nav__link">
+    Dockerfile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" title="commands" class="md-nav__link">
+    commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-compose-commands" title="docker-compose commands" class="md-nav__link">
+    docker-compose commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#copy-files-from-host-to-running-container" title="Copy files from host to running container" class="md-nav__link">
     Copy files from host to running container
   </a>
@@ -463,6 +505,30 @@
                 
                 
                 <h1 id="docker">Docker</h1>
+<h2 id="dockerfile">Dockerfile</h2>
+<p><a href="https://docs.docker.com/engine/reference/builder/">Documentation</a></p>
+<h2 id="commands">commands</h2>
+<pre><code>
+# Remove untagged images
+docker rmi -f $(docker images | grep &quot;&lt;none&gt;&quot; | awk &quot;{print \$3}&quot;)
+docker build -t mysticalaj/node-web-app -f prod/Dockerfile . # -t for tagname
+docker images
+docker run -p 8000:8000 -d mysticalaj/node-web-app -e PORT=8000
+docker ps
+docker logs &lt;container id&gt;
+docker exec -it &lt;container id&gt; /bin/bash
+docker stop container_id
+docker rm container_id
+docker image rm image_name
+</code></pre>
+
+<h2 id="docker-compose-commands">docker-compose commands</h2>
+<pre><code>sudo chown -R $USER:$USER . # Setting volume permissions
+docker-compose build # also to rebuild
+docker-compose up # Run all containers
+docker-compose run web npm install cors
+</code></pre>
+
 <h2 id="copy-files-from-host-to-running-container">Copy files from host to running container</h2>
 <pre><code>docker cp foo.txt mycontainer:/foo.txt
 docker cp mycontainer:/foo.txt foo.txt
@@ -488,6 +554,17 @@ mongo --port 27017 -u &quot;dineshsune&quot; -p &quot;2439789fdseold98954&quot; 
 
 sudo mongorestore --db parallel-learning-video-services --drop /home/ubuntu/parallel-learning-video-services/parallel-learning-video-services/
 </code></pre>
+
+<p>docker run -it image_id /bin/bash
+apt update
+exit
+docker commit container_id newimage_name
+firebase login --no-localhost</p>
+<p>server ---</p>
+<p>express, graphql, reactjs, mongodb -- +++</p>
+<p>react-native
+-- mobile auth -&gt; firebase | any other
+-- </p>
                 
                   
                 

@@ -97,13 +97,28 @@
         }, 
         {
             "location": "/linux/docker/", 
-            "text": "Docker\n\n\nCopy files from host to running container\n\n\ndocker cp foo.txt mycontainer:/foo.txt\ndocker cp mycontainer:/foo.txt foo.txt\n\n# Multiple files contained by the folder src can be copied into the target folder using:\n\ndocker cp src/. mycontainer:/target\ndocker cp mycontainer:/src/. target\n\n\n\n\nRun command inside running container\n\n\ndocker exec -it container_id bash\n\n\nSCP\n\n\nscp -i parallel-learning.pem -r ec2-user@12.23.33.33:/home/ec2-user/mongo/ /home/ubuntu/keys/data\n\nscp -i parallel-learning.pem -r /home/ubuntu/keys/data/mongo/12-15-17/parallel-learning-video-services/ ubuntu@12.23.33.33:/home/ubuntu/parallel-learning-video-services/\n\n\n\n\nMongoDB\n\n\nsudo mongodump --db parallel-learning-video-services --out /home/ec2-user/mongo/`date +\n%m-%d-%y\n` --username dineshsune --password \n2439789fdseold98954\n\n\nmongo --port 27017 -u \ndineshsune\n -p \n2439789fdseold98954\n --authenticationDatabase \nparallel-learning-video-services\n\n\nsudo mongorestore --db parallel-learning-video-services --drop /home/ubuntu/parallel-learning-video-services/parallel-learning-video-services/", 
+            "text": "Docker\n\n\nDockerfile\n\n\nDocumentation\n\n\ncommands\n\n\n\n# Remove untagged images\ndocker rmi -f $(docker images | grep \nnone\n | awk \n{print \\$3}\n)\ndocker build -t mysticalaj/node-web-app -f prod/Dockerfile . # -t for tagname\ndocker images\ndocker run -p 8000:8000 -d mysticalaj/node-web-app -e PORT=8000\ndocker ps\ndocker logs \ncontainer id\n\ndocker exec -it \ncontainer id\n /bin/bash\ndocker stop container_id\ndocker rm container_id\ndocker image rm image_name\n\n\n\n\ndocker-compose commands\n\n\nsudo chown -R $USER:$USER . # Setting volume permissions\ndocker-compose build # also to rebuild\ndocker-compose up # Run all containers\ndocker-compose run web npm install cors\n\n\n\n\nCopy files from host to running container\n\n\ndocker cp foo.txt mycontainer:/foo.txt\ndocker cp mycontainer:/foo.txt foo.txt\n\n# Multiple files contained by the folder src can be copied into the target folder using:\n\ndocker cp src/. mycontainer:/target\ndocker cp mycontainer:/src/. target\n\n\n\n\nRun command inside running container\n\n\ndocker exec -it container_id bash\n\n\nSCP\n\n\nscp -i parallel-learning.pem -r ec2-user@12.23.33.33:/home/ec2-user/mongo/ /home/ubuntu/keys/data\n\nscp -i parallel-learning.pem -r /home/ubuntu/keys/data/mongo/12-15-17/parallel-learning-video-services/ ubuntu@12.23.33.33:/home/ubuntu/parallel-learning-video-services/\n\n\n\n\nMongoDB\n\n\nsudo mongodump --db parallel-learning-video-services --out /home/ec2-user/mongo/`date +\n%m-%d-%y\n` --username dineshsune --password \n2439789fdseold98954\n\n\nmongo --port 27017 -u \ndineshsune\n -p \n2439789fdseold98954\n --authenticationDatabase \nparallel-learning-video-services\n\n\nsudo mongorestore --db parallel-learning-video-services --drop /home/ubuntu/parallel-learning-video-services/parallel-learning-video-services/\n\n\n\n\ndocker run -it image_id /bin/bash\napt update\nexit\ndocker commit container_id newimage_name\nfirebase login --no-localhost\n\n\nserver ---\n\n\nexpress, graphql, reactjs, mongodb -- +++\n\n\nreact-native\n-- mobile auth -\n firebase | any other\n--", 
             "title": "Docker"
         }, 
         {
             "location": "/linux/docker/#docker", 
             "text": "", 
             "title": "Docker"
+        }, 
+        {
+            "location": "/linux/docker/#dockerfile", 
+            "text": "Documentation", 
+            "title": "Dockerfile"
+        }, 
+        {
+            "location": "/linux/docker/#commands", 
+            "text": "# Remove untagged images\ndocker rmi -f $(docker images | grep  none  | awk  {print \\$3} )\ndocker build -t mysticalaj/node-web-app -f prod/Dockerfile . # -t for tagname\ndocker images\ndocker run -p 8000:8000 -d mysticalaj/node-web-app -e PORT=8000\ndocker ps\ndocker logs  container id \ndocker exec -it  container id  /bin/bash\ndocker stop container_id\ndocker rm container_id\ndocker image rm image_name", 
+            "title": "commands"
+        }, 
+        {
+            "location": "/linux/docker/#docker-compose-commands", 
+            "text": "sudo chown -R $USER:$USER . # Setting volume permissions\ndocker-compose build # also to rebuild\ndocker-compose up # Run all containers\ndocker-compose run web npm install cors", 
+            "title": "docker-compose commands"
         }, 
         {
             "location": "/linux/docker/#copy-files-from-host-to-running-container", 
@@ -122,18 +137,23 @@
         }, 
         {
             "location": "/linux/docker/#mongodb", 
-            "text": "sudo mongodump --db parallel-learning-video-services --out /home/ec2-user/mongo/`date + %m-%d-%y ` --username dineshsune --password  2439789fdseold98954 \n\nmongo --port 27017 -u  dineshsune  -p  2439789fdseold98954  --authenticationDatabase  parallel-learning-video-services \n\nsudo mongorestore --db parallel-learning-video-services --drop /home/ubuntu/parallel-learning-video-services/parallel-learning-video-services/", 
+            "text": "sudo mongodump --db parallel-learning-video-services --out /home/ec2-user/mongo/`date + %m-%d-%y ` --username dineshsune --password  2439789fdseold98954 \n\nmongo --port 27017 -u  dineshsune  -p  2439789fdseold98954  --authenticationDatabase  parallel-learning-video-services \n\nsudo mongorestore --db parallel-learning-video-services --drop /home/ubuntu/parallel-learning-video-services/parallel-learning-video-services/  docker run -it image_id /bin/bash\napt update\nexit\ndocker commit container_id newimage_name\nfirebase login --no-localhost  server ---  express, graphql, reactjs, mongodb -- +++  react-native\n-- mobile auth -  firebase | any other\n--", 
             "title": "MongoDB"
         }, 
         {
             "location": "/linux/shell/", 
-            "text": "Linux Shell\n\n\nPermissions\n\n\nDirectory navigation\n\n\nServices\n\n\nApplications\n\n\nSystem Recovery\n\n\nFile system\n\n\nPackage manager\n\n\nHardware detection\n\n\nBootloader\n\n\nNetworking", 
+            "text": "Linux Shell\n\n\nKernel\n\n\n# Get kernel version\nuname -r\n# Get OS info\nlsb_release -a\n\n\n\n\nPermissions\n\n\nDirectory navigation\n\n\nServices\n\n\nApplications\n\n\nSystem Recovery\n\n\nFile system\n\n\nPackage manager\n\n\nHardware detection\n\n\nBootloader\n\n\nNetworking\n\n\nUtilites\n\n\nstrings yourPDFfilepath.pdf | grep FontName", 
             "title": "Linux shell"
         }, 
         {
             "location": "/linux/shell/#linux-shell", 
             "text": "", 
             "title": "Linux Shell"
+        }, 
+        {
+            "location": "/linux/shell/#kernel", 
+            "text": "# Get kernel version\nuname -r\n# Get OS info\nlsb_release -a", 
+            "title": "Kernel"
         }, 
         {
             "location": "/linux/shell/#permissions", 
@@ -184,6 +204,11 @@
             "location": "/linux/shell/#networking", 
             "text": "", 
             "title": "Networking"
+        }, 
+        {
+            "location": "/linux/shell/#utilites", 
+            "text": "strings yourPDFfilepath.pdf | grep FontName", 
+            "title": "Utilites"
         }, 
         {
             "location": "/linux/cloud-server/", 
@@ -282,7 +307,7 @@
         }, 
         {
             "location": "/firebase/", 
-            "text": "Firebase\n\n\nCreate project through firebase console\n\n\nLocal project Setup\n\n\nmkdir firebase-boilerplate \n cd firebase-boilerplate\nexp init MobileClient\ncreate-react-app webclient\nfirebase init\n\n\n\n\nServer setup\n\n\nMobileClient\n\n\nWebClient", 
+            "text": "Firebase\n\n\nCreate project through firebase console\n\n\nLocal project Setup\n\n\nmkdir firebase-boilerplate \n cd firebase-boilerplate\nexp init MobileClient\ncreate-react-app webclient\nfirebase init\n\n\n\n\nServer setup\n\n\nMobileClient\n\n\nWebClient\n\n\nfirebase.json\n\n\nThe app name comes from index.ts\n\n\nrewrites\n: [\n  {\n    \nsource\n: \n**\n,\n    \ndestination\n: \n/index.html\n\n  },\n  {\n    \nsource\n: \n/app\n,\n    \ndestination\n: \nhelloWorld\n\n  }\n]\n\n\n\n\nfirebase serve --only functions,hosting", 
             "title": "Firebase"
         }, 
         {
@@ -316,6 +341,11 @@
             "title": "WebClient"
         }, 
         {
+            "location": "/firebase/#firebasejson", 
+            "text": "The app name comes from index.ts  rewrites : [\n  {\n     source :  ** ,\n     destination :  /index.html \n  },\n  {\n     source :  /app ,\n     destination :  helloWorld \n  }\n]  firebase serve --only functions,hosting", 
+            "title": "firebase.json"
+        }, 
+        {
             "location": "/d3js/", 
             "text": "D3js", 
             "title": "D3js"
@@ -337,7 +367,7 @@
         }, 
         {
             "location": "/react/", 
-            "text": "React\n\n\nPackages\n\n\nMaterial-ui\n\n\nFabric ui react\n\n\nsemantic-ui-react\n\n\nReact-Router\n\n\nReact-fns\n\n\nApollo-client\n\n\nReact Redux\n\n\naxios\n\n\n\n\nBuild complex ui animations\n- scene animation\n\n\n\n\n\n\nAnimated\nReact Motion\n\n\nthree.js\nd3.js\ncanvas\n\n\nExpertise - \n\n\nJS language\nDatastrctures\nBasic Algorithms\nDesign patterns\n\n\nUI, UX Design\nAnimation\nClient data storage\n\n\nReactJS API\nThreeJS API\nAnimated\nReact Motion\nReact Router\n\n\nBlockchain\nData Science\nArtificial Intelligence\nHacking\n\n\nRegular Reading and updates\n\n\nLinux operating system\nUser Interfaces - UX, UI\n    - Layouts\n    - Animations\n    - Transitions\n    - Interactions\n\n\nFabric UI React\n\n\nYou need to have nodejs installed on your computer to continue with this video.\nOpen your terminal and type npm install -g create-react-app or if you have yarn with nodejs then type yarn global add create-react-app\n\n\ncreate-react-app thin-fabric\ncd thing fabric\nyarn start\n\n\ncreate college elections app\n\n\ncreate-react-app\nfabric-ui-setup\nconfigure-login\n\n\n\n\nput up the video on youtube\n\n\nSubmit it to egghead.io\n\n\n\n\nPut up multiple such\n\n\n\n\nGoogle drive integration through react native\n\n\nUsing react-fns\n\n\nprisma graphql introduction\n\n\nmaterial-ui@next introduction\n\n\nReact native signature\n\n\nfirebase phone authentication with react-native\n\n\nUsing firestore for your app data\n\n\nUsing d3js with React\n\n\nintegrate google maps api into React\n\n\nManage forms using formik\n\n\nhtml5 canvas paint app\n\n\nfirebase authentication with react-native\n\n\n\n\n\n\n\n\nbuild a polygon rating component using React\n\n\n\n\nbuild student elections app with fabric ui\n\n\nbuild student placements app with material-ui@next\n\n\nReact-Native application with prisma graphql\n\n\n3d modelling with Three.js\n\n\niBeacon with React-Native\n\n\n\n\nFirebase + ReactJS\n\n\nEvents\nMeal Planner\nStudents\nMarathi Tech tutorials\n\n\nTechnology Consulting\n- Policy, Research, Advocacy, Education, Laws\n\n\nDevelopment\n- Education, Politics\n\n\nReactJS Industry trainer", 
+            "text": "React\n\n\nPackages\n\n\nMaterial-ui\n\n\nFabric ui react\n\n\nsemantic-ui-react\n\n\nReact-Router\n\n\nReact-fns\n\n\nApollo-client\n\n\nReact Redux\n\n\naxios\n\n\n\n\nBuild complex ui animations\n- scene animation\n\n\n\n\n\n\nAnimated\nReact Motion\n\n\nthree.js\nd3.js\ncanvas\n\n\nExpertise - \n\n\nJS language\nDatastrctures\nBasic Algorithms\nDesign patterns\n\n\nUI, UX Design\nAnimation\nClient data storage\n\n\nReactJS API\nThreeJS API\nAnimated\nReact Motion\nReact Router\n\n\nBlockchain\nData Science\nArtificial Intelligence\nHacking\n\n\nRegular Reading and updates\n\n\nLinux operating system\nUser Interfaces - UX, UI\n    - Layouts\n    - Animations\n    - Transitions\n    - Interactions\n\n\nFabric UI React\n\n\nYou need to have nodejs installed on your computer to continue with this video.\nOpen your terminal and type npm install -g create-react-app or if you have yarn with nodejs then type yarn global add create-react-app\n\n\ncreate-react-app thin-fabric\ncd thing fabric\nyarn start\n\n\ncreate college elections app\n\n\ncreate-react-app\nfabric-ui-setup\nconfigure-login\n\n\n\n\nput up the video on youtube\n\n\nSubmit it to egghead.io\n\n\n\n\nPut up multiple such\n\n\n\n\nGoogle drive integration through react native\n\n\nUsing react-fns\n\n\nprisma graphql introduction\n\n\nmaterial-ui@next introduction\n\n\nReact native signature\n\n\nfirebase phone authentication with react-native\n\n\nUsing firestore for your app data\n\n\nUsing d3js with React\n\n\nintegrate google maps api into React\n\n\nManage forms using formik\n\n\nhtml5 canvas paint app\n\n\nfirebase authentication with react-native\n\n\n\n\n\n\n\n\nbuild a polygon rating component using React\n\n\n\n\nbuild student elections app with fabric ui\n\n\nbuild student placements app with material-ui@next\n\n\nReact-Native application with prisma graphql\n\n\n3d modelling with Three.js\n\n\niBeacon with React-Native\n\n\n\n\nFirebase + ReactJS\n\n\nEvents\nMeal Planner\nStudents\nMarathi Tech tutorials\n\n\nTechnology Consulting\n- Policy, Research, Advocacy, Education, Laws\n\n\nDevelopment\n- Education, Politics\n\n\nReactJS Industry trainer\n\n\nDo the prototype first\n- List down the steps required to build it\n- Break the video into these chunks required to build\n- Demo\n\n\nMadhya Saptak\n\n\n4 komal swara Re Ga Dha Ni\n1 Tivra Pa _ all wholes open\n7 Shudh Sa Re Ga Ma Pa Dha Ni \n\n\nSa Re(.) Re Ga(.) Ga Ma Ma(^) Pa Dha(.) Dha Ni(.) Ni\n\n\nMandra Saptak\n\n\nPa Dha(.) Dha Ni(.) Ni\n\n\nTaar Saptak\n\n\nSa Re(.) Re Ga(.) Ga Ma Ma(^) Pa (keep whole #1 slightly open)\n\n\nSudo apt update\n\n\nDev Stack\n\n\n\n\n\n\nReact Ecosystem\n\n\n\n\nreact-router\n\n\nreact-fns\n\n\nmaterial-ui, semantic-ui-react, fabric-ui-react\n\n\naxios\n\n\n\n\n\n\n\n\nReact Native Ecosystem\n\n\n\n\nreact-native\n\n\nAndroid\n\n\niOS\n\n\nReact navigation\n\n\napollo-cache-persist\n\n\n\n\n\n\n\n\nFrontend Common\n\n\n\n\nreact\n\n\nstyled-components\n\n\nlodash\n\n\nreact-motion\n\n\napollo-client, apollo-cache-persist\n\n\nredux, redux-persist, redux-thunk\n\n\nfirebase\n\n\ndate-fns\n\n\n\n\n\n\n\n\nServer\n\n\n\n\nexpress | body-parser, cookie-parser, express-session, cors, ejs, helment, morgan, serve-favicon\n\n\napollo-server-express, graphql-tools, graphql, dataloader\n\n\naxios\n\n\nbcryptjs, express-jwt, passport\n\n\nmongodb, mongoose\n\n\nfirebase, firebase-admin\n\n\nuuid\n\n\nlodash\n\n\ndate-fns\n\n\njest\n\n\n\n\n\n\n\n\nStandard Server\n-   mobile auth, web auth\n-   auto admin user\n-   user management\n-   group management\n-   restrict access by group to queries and mutations\n-   every request is logged and log files archived\n\n\nDocker\n- deployment, backups\n\n\nUbuntu\n- Initial server setup, monitoring\n\n\nApache2\n- dns resolution, letsencrypt ssl\n\n\nKubernetes\n- container orchestration\n\n\n\n\nBuild express server\n\n\ndockerize express server\n\n\nadd mongodb connection\n\n\ntest mongodb connection with simple routes\n\n\nadd passport authentication with oauth web\n\n\nadd passport authentication with oauth mobile\n\n\nbuild a react client code that decides authentication strategy based on dev or production flag\n\n\nadd graphql and make it work\n\n\ndetect queries and mutations and build boilerplate code, build resolvers for types -- add a development watch and run script\n\n\nadd graphql-playground\n\n\nadd graphql-voyager\n\n\nadmin interface\n\n\nuser management\n\n\ngroup management\n\n\n\n\nDockerize - Wordpress, Moodle, Drupal, shinystudio, nodejs\n\n\nLearning strategy\n\n\n\n\nexpertize in React, React-Native, GraphQL, Firebase\n\n\nHacking", 
             "title": "React"
         }, 
         {
@@ -402,7 +432,7 @@
         }, 
         {
             "location": "/react/#firebase-reactjs", 
-            "text": "Events\nMeal Planner\nStudents\nMarathi Tech tutorials  Technology Consulting\n- Policy, Research, Advocacy, Education, Laws  Development\n- Education, Politics  ReactJS Industry trainer", 
+            "text": "Events\nMeal Planner\nStudents\nMarathi Tech tutorials  Technology Consulting\n- Policy, Research, Advocacy, Education, Laws  Development\n- Education, Politics  ReactJS Industry trainer  Do the prototype first\n- List down the steps required to build it\n- Break the video into these chunks required to build\n- Demo  Madhya Saptak  4 komal swara Re Ga Dha Ni\n1 Tivra Pa _ all wholes open\n7 Shudh Sa Re Ga Ma Pa Dha Ni   Sa Re(.) Re Ga(.) Ga Ma Ma(^) Pa Dha(.) Dha Ni(.) Ni  Mandra Saptak  Pa Dha(.) Dha Ni(.) Ni  Taar Saptak  Sa Re(.) Re Ga(.) Ga Ma Ma(^) Pa (keep whole #1 slightly open)  Sudo apt update  Dev Stack    React Ecosystem   react-router  react-fns  material-ui, semantic-ui-react, fabric-ui-react  axios     React Native Ecosystem   react-native  Android  iOS  React navigation  apollo-cache-persist     Frontend Common   react  styled-components  lodash  react-motion  apollo-client, apollo-cache-persist  redux, redux-persist, redux-thunk  firebase  date-fns     Server   express | body-parser, cookie-parser, express-session, cors, ejs, helment, morgan, serve-favicon  apollo-server-express, graphql-tools, graphql, dataloader  axios  bcryptjs, express-jwt, passport  mongodb, mongoose  firebase, firebase-admin  uuid  lodash  date-fns  jest     Standard Server\n-   mobile auth, web auth\n-   auto admin user\n-   user management\n-   group management\n-   restrict access by group to queries and mutations\n-   every request is logged and log files archived  Docker\n- deployment, backups  Ubuntu\n- Initial server setup, monitoring  Apache2\n- dns resolution, letsencrypt ssl  Kubernetes\n- container orchestration   Build express server  dockerize express server  add mongodb connection  test mongodb connection with simple routes  add passport authentication with oauth web  add passport authentication with oauth mobile  build a react client code that decides authentication strategy based on dev or production flag  add graphql and make it work  detect queries and mutations and build boilerplate code, build resolvers for types -- add a development watch and run script  add graphql-playground  add graphql-voyager  admin interface  user management  group management   Dockerize - Wordpress, Moodle, Drupal, shinystudio, nodejs  Learning strategy   expertize in React, React-Native, GraphQL, Firebase  Hacking", 
             "title": "Firebase + ReactJS"
         }, 
         {

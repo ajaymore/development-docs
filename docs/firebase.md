@@ -16,3 +16,20 @@ firebase init
 ### MobileClient
 
 ### WebClient
+
+
+### firebase.json
+The app name comes from index.ts
+```
+"rewrites": [
+  {
+    "source": "**",
+    "destination": "/index.html"
+  },
+  {
+    "source": "/app",
+    "destination": "helloWorld"
+  }
+]
+```
+`firebase serve --only functions,hosting`

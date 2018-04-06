@@ -1,5 +1,13 @@
 # Linux Shell
 
+## Kernel
+```
+# Get kernel version
+uname -r
+# Get OS info
+lsb_release -a
+```
+
 ## Permissions
 
 ## Directory navigation
@@ -19,3 +27,6 @@
 ## Bootloader
 
 ## Networking
+
+## Utilites
+strings yourPDFfilepath.pdf | grep FontName
