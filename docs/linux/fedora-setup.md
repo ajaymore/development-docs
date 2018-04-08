@@ -40,4 +40,7 @@ wget https://github.com/kakkoyun/linux.files/raw/master/fonts/Consolas.ttf
 ```
 - [Docker](https://docs.docker.com/install/linux/docker-ce/fedora/#set-up-the-repository)
 - [NodeJS](https://nodejs.org/en/download/package-manager/#enterprise-linux-and-fedora)
+```
+[File Watching](https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc)
+```
 - [Yarn](https://yarnpkg.com/en/docs/install)
