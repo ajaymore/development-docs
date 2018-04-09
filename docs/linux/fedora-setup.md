@@ -39,6 +39,9 @@ wget https://github.com/kakkoyun/linux.files/raw/master/fonts/Consolas.ttf
 }
 ```
 - [Docker](https://docs.docker.com/install/linux/docker-ce/fedora/#set-up-the-repository)
+```
+docker run --name mongo-container --restart always -p 27017:27017 -d mongo
+```
 - [NodeJS](https://nodejs.org/en/download/package-manager/#enterprise-linux-and-fedora)
 ```
 [File Watching](https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc)
