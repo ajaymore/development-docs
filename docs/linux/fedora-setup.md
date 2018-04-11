@@ -65,3 +65,4 @@ docker run --name mongo-container --restart always -p 27017:27017 -d mongo
   sudo systemctl enable libvirtd;
   lsmod | grep kvm
   ```
+- [React Native](https://facebook.github.io/react-native/docs/getting-started.html)
