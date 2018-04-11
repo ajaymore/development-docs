@@ -47,3 +47,21 @@ docker run --name mongo-container --restart always -p 27017:27017 -d mongo
 [File Watching](https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc)
 ```
 - [Yarn](https://yarnpkg.com/en/docs/install)
+- Android
+  - Java
+  ```
+  sudo dnf install java-1.8.0-openjdk-devel
+  sudo update-alternatives --config java
+  sudo nano /etc/environment
+  JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+  source /etc/environment
+  echo $JAVA_HOME
+  ```
+  - [Android Studio](https://developer.android.com/studio/index.html)
+  - [Virtualization](https://bytefreaks.net/android/fedora-configure-hardware-acceleration-for-the-android-emulator)
+  ```
+  sudo dnf group install --with-optional virtualization;
+  sudo systemctl start libvirtd;
+  sudo systemctl enable libvirtd;
+  lsmod | grep kvm
+  ```
