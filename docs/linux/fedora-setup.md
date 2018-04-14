@@ -18,9 +18,10 @@ dnf clean all
 dnf reinstall
 ```
 ## Gnome configuration
+Install remove-rounded-corners, window-list as extensions
 ```
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
-
+sudo dnf install adapta-gtk-theme gnome-tweak-tool
 ```
 
 ## Packages
