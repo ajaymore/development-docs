@@ -17,6 +17,8 @@ docker exec -it <container id> /bin/bash
 docker stop container_id
 docker rm container_id
 docker image rm image_name
+# remove all stopped containers
+docker rm $(docker ps --filter status=exited -q)
 ```
 
 ## docker-compose commands
