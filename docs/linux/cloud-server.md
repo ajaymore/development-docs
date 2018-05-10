@@ -17,7 +17,21 @@
 
 ### Docker
 
-### nginx
+### Networking with nginx
+
+[LetsEncrypt](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04)
+[VirtualHost](https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04)
+
+1. Install nginx
+```
+cd /etc/nginx/sites-available
+sudo mv default mysite.org
+sudo vim mysite.org
+sudo rm /etc/nginx/sites-enabled/default
+sudo ln -s /etc/nginx/sites-available/mysite.org /etc/nginx/sites-enabled/mysite.org
+sudo nginx -t
+sudo systemctl restart nginx
+sudo certbot --nginx -d mysite.org -d www.mysite.org
 
 ### apache2
 ```
