@@ -32,6 +32,7 @@ sudo ln -s /etc/nginx/sites-available/mysite.org /etc/nginx/sites-enabled/mysite
 sudo nginx -t
 sudo systemctl restart nginx
 sudo certbot --nginx -d mysite.org -d www.mysite.org
+```
 
 ### apache2
 ```
