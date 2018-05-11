@@ -36,6 +36,8 @@ chgrp -hR staff /u
 # add user to group wheel
 usermod -aG wheel username
 
+# list users in group
+sudo grep 'grpup-name-here' /etc/group
 ```
 ## Directory navigation
 
