@@ -19,6 +19,10 @@ docker rm container_id
 docker image rm image_name
 # remove all stopped containers
 docker rm $(docker ps --filter status=exited -q)
+
+# remove everything
+docker kill $(docker ps -aq)
+docker rm $(docker ps -aq)
 ```
 
 ## docker-compose commands
