@@ -7,6 +7,7 @@
 - Docker
 - Sublime Text
 - Firefox
+- Virtualbox
 
 ```
 brew install node
