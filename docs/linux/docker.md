@@ -55,12 +55,50 @@ scp -i parallel-learning.pem -r /home/ubuntu/keys/data/mongo/12-15-17/parallel-l
 ```
 
 ## MongoDB
+One Super User controls everything.
+At code level each database is owned by their particular user and not by super user
+
+One Super User controls everything.
+At code level each database is owned by their particular user and not by super user
+
 ```
-sudo mongodump --db parallel-learning-video-services --out /home/ec2-user/mongo/`date +"%m-%d-%y"` --username dineshsune --password "2439789fdseold98954"
+# Create Container with root user
+docker run --name mongo-container --restart always -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=secret mongo -p 27017:27017 -d mongo
 
-mongo --port 27017 -u "dineshsune" -p "2439789fdseold98954" --authenticationDatabase "parallel-learning-video-services"
+# Login with root user
+mongo --port 27017 -u "mongoadmin" -p "secret" --authenticationDatabase "admin"
 
-sudo mongorestore --db parallel-learning-video-services --drop /home/ubuntu/parallel-learning-video-services/parallel-learning-video-services/
+# Provide super user capabilities
+db.updateUser("mongoadmin" , { roles: ["userAdminAnyDatabase", "dbAdminAnyDatabase", "readWriteAnyDatabase"]})
+
+# change password of a user
+use cmca-dev
+db.changeUserPassword("cmcadev", "newPswd")
+
+# create database and db user
+use cmca-dev
+db.createUser({user: "cmcadev", pwd: "budaik3ma0ahb8Ie", roles: ["readWrite"]})
+
+# login with db user
+mongo --port 27017 -u "ajaymore" -p "" --authenticationDatabase "parallel-learning"
+```
+
+```
+# backup by admin
+docker run --rm --link mongo-container:mongo -v $HOME/mongo-backup:/backup mongo \
+ bash -c 'mongodump --out /backup --host mongo:27017'
+
+# restore by admin
+docker run --rm --link mongo-container:mongo -v $HOME/mongo-backup:/backup mongo \
+ bash -c 'mongorestore /backup --host mongo:27017'
+
+# backup by user
+docker run --rm --link mongo-container:mongo -v $HOME/mongo-backup:/backup mongo \
+ bash -c 'mongodump --db cmca-dev -u cmcadev -p newPswd --out /backup --host mongo:27017'
+
+# restore by user
+docker run --rm --link mongo-container:mongo -v $HOME/mongo-backup:/backup mongo \
+ bash -c 'mongorestore --db cmca-dev -u cmcadev -p newPswd /backup/cmca-dev --host mongo:27017'
 ```
 
 
