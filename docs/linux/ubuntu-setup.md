@@ -128,3 +128,6 @@ sudo apt-get clean
 
 ## OS Configuration
 - `gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'`
+
+## `youtube-dl`
+youtube-dl --extract-audio --audio-format mp3 <video URL>
