@@ -63,7 +63,10 @@ At code level each database is owned by their particular user and not by super u
 
 ```
 # Create Container with root user
-docker run --name mongo-container --restart always -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=secret mongo -p 27017:27017 -d mongo
+docker run --name mongo-container -v /home/ajay/mongo-data:/data/db --net=bridge --restart always -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=secret -p 27017:27017 -d mongo
+
+# access the container
+docker exec -it mongo-container /bin/bash
 
 # Login with root user
 mongo --port 27017 -u "mongoadmin" -p "secret" --authenticationDatabase "admin"
@@ -71,13 +74,13 @@ mongo --port 27017 -u "mongoadmin" -p "secret" --authenticationDatabase "admin"
 # Provide super user capabilities
 db.updateUser("mongoadmin" , { roles: ["userAdminAnyDatabase", "dbAdminAnyDatabase", "readWriteAnyDatabase"]})
 
-# change password of a user
-use cmca-dev
-db.changeUserPassword("cmcadev", "newPswd")
-
 # create database and db user
 use cmca-dev
 db.createUser({user: "cmcadev", pwd: "budaik3ma0ahb8Ie", roles: ["readWrite"]})
+
+# change password of a user
+use cmca-dev
+db.changeUserPassword("cmcadev", "newPswd")
 
 # login with db user
 mongo --port 27017 -u "ajaymore" -p "" --authenticationDatabase "parallel-learning"
