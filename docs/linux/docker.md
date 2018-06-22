@@ -103,6 +103,9 @@ docker run --rm --link mongo-container:mongo -v $HOME/mongo-backup:/backup mongo
 # restore by user
 docker run --rm --link mongo-container:mongo -v $HOME/mongo-backup:/backup mongo \
  bash -c 'mongorestore --db cmca-dev -u cmcadev -p newPswd /backup/cmca-dev --host mongo:27017'
+ 
+# Using mongo atlas
+mongodump --host cluster0-shard-00-00-ksqln.mongodb.net:27017 --db cmcaindia --ssl --authenticationDatabase admin --username xxxx --password xxxx -o "/home/temp"
 ```
 
 
