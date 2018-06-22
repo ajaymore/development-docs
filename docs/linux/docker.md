@@ -72,6 +72,7 @@ docker exec -it mongo-container /bin/bash
 mongo --port 27017 -u "mongoadmin" -p "secret" --authenticationDatabase "admin"
 
 # Provide super user capabilities
+use admin
 db.updateUser("mongoadmin" , { roles: ["userAdminAnyDatabase", "dbAdminAnyDatabase", "readWriteAnyDatabase"]})
 
 # create database and db user
