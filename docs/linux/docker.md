@@ -3,6 +3,8 @@
 ## Dockerfile
 [Documentation](https://docs.docker.com/engine/reference/builder/)
 
+`mkdir $(date +%Y-%m-%d_%H%M)`
+
 ## commands
 ```
 
