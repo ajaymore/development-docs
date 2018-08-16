@@ -110,6 +110,12 @@ docker run --rm --link mongo-container:mongo -v $HOME/mongo-backup:/backup mongo
 mongodump --host cluster0-shard-00-00-ksqln.mongodb.net:27017 --db cmcaindia --ssl --authenticationDatabase admin --username xxxx --password xxxx -o "/home/temp"
 ```
 
+## MySQL
+```
+docker exec CONTAINER /usr/bin/mysqldump -u root --password=root DATABASE > backup.sql
+cat backup.sql | docker exec -i CONTAINER /usr/bin/mysql -u root --password=root DATABASE
+```
+
 
 docker run -it image_id /bin/bash
 apt update
