@@ -24,13 +24,23 @@ wget https://github.com/kakkoyun/linux.files/raw/master/fonts/Consolas.ttf
 >> Install using font manager
 # VS Code - prettier, python, kary-light
 {
+  "javascript.validate.enable": false,
   "editor.formatOnSave": true,
+  "[yaml]": {
+    "editor.formatOnSave": false
+  },
   "window.zoomLevel": 0,
-  "editor.fontFamily": "CONSOLAS",
-  "workbench.colorTheme": "Kary － Light",
   "prettier.eslintIntegration": true,
-  "prettier.singleQuote": true
+  "prettier.singleQuote": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/dist": true
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDragAndDrop": false
 }
+
 
 ```
 
