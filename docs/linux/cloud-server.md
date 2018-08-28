@@ -41,6 +41,12 @@ sudo ufw allow 22/tcp
 sudo ufw allow www
 ```
 
+### Set Timezone
+```
+date
+sudo dpkg-reconfigure tzdata
+```
+
 ### Base packages
 - `sudo apt update && sudo apt dist-upgrade && sudo apt autoremove`
 - `sudo apt -y install gcc make linux-headers-$(uname -r) dkms`
