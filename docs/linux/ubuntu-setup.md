@@ -38,10 +38,11 @@ wget https://github.com/kakkoyun/linux.files/raw/master/fonts/Consolas.ttf
     "**/dist": true
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  "files.associations": {
+    "*.ejs": "html"
+  }
 }
-
-
 ```
 
 #### Nodejs
