@@ -1,5 +1,5 @@
-[iOS](#ios)
-[Android](#android)
+- [iOS](#ios)
+- [Android](#android)
 
 ## iOS
 
