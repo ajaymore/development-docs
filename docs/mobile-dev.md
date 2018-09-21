@@ -11,11 +11,11 @@ Run project from xcode
 Edit code in VSCode
 ```
 
-2. **Code development | IDEs Text Editor
+2. **Code development | IDEs Text Editor**
   - Xcode
   - VSCode
 
-3. Third party component integration (iOS, Android)
+3. **Third party component integration (iOS, Android)**
 ```
 # react-native-firebase
 yarn add react-native-firebase
@@ -27,19 +27,19 @@ Create firebase project, download GoogleService-Info.plist
 add GoogleService-Info.plist to root of the project
 ```
 
-4. Reusable Component library
+4. **Reusable Component library**
   - Form wrappers
   - Data fetching logic
   - File upload logic
 
-5. App Signing | Certificate management
+5. **App Signing | Certificate management**
   - Choose automatic signing in XCode
   - Create App Id at https://developer.apple.com/account/ under Certificates, Identifiers & Profiles
   - Create Push notification key under Keys if required
   - Create App in http://itunesconnect.apple.com/
   - Update relevant url schemes under Info section in Xcode
 
-6. Building & Testing deployments
+6. **Building & Testing deployments**
   - Add beta testers under Users & Roles at http://itunesconnect.apple.com/
   - Create 1024*1024 Icon, use icon Set Generator utility to generate assets
   - Product -> Scheme -> Edit Scheme -> Run | choose debug or release
@@ -47,10 +47,10 @@ add GoogleService-Info.plist to root of the project
   - Info.plist -> App Transport Security Settings -> Exception Domains -> localhost -> NESException -> YES | NO
   - Product > Archive > Window > Organizer > Validate > Upload
 
-7. Using emulators
+7. **Using emulators**
   - 
 
-8. App submission guides
+8. **App submission guides**
   - Verify permissions
 ```
 <key>NSCameraUsageDescription</key>
@@ -66,8 +66,8 @@ add GoogleService-Info.plist to root of the project
 <key>NSPhotoLibraryUsageDescription</key>
 <string>$(PRODUCT_NAME) App would like to access your photo gallery for you to upload photos with the field reports. None of your photos would be accessed without your permission.</string>
 ```
-	- Description
-	- SplashScreen
+  - Description
+  - SplashScreen
 
-9. App Deployment
+9. **App Deployment**
   - Toggle step 6 & 8
