@@ -1,3 +1,6 @@
+[iOS](## iOs)
+[Android](## Android)
+
 ## iOS
 
 **1. Development setup | Project creation**
@@ -147,7 +150,7 @@ latest of implementation 'com.google.android.gms:play-services-auth:15.0.0'
   - File upload logic
 
 **6. App Signing | Certificate management**
-  - [Create keystore, add SHA1 to firebase app[(https://flutter.io/android-release/)
+  - [Create keystore, add SHA1 to firebase app](https://flutter.io/android-release/)
 ```
 # debug sha1
 keytool -exportcert -list -v -alias androiddebugkey -keystore ~/.android/debug.keystore
