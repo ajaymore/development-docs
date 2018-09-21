@@ -1,6 +1,6 @@
 ## iOS
 
-1. Development setup | Project creation
+1. **Development setup | Project creation**
 ```
 react-native init myapp
 cd myapp/ios
@@ -11,7 +11,7 @@ Run project from xcode
 Edit code in VSCode
 ```
 
-2. Code development | IDEs Text Editor
+2. **Code development | IDEs Text Editor
   - Xcode
   - VSCode
 
