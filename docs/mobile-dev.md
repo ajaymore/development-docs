@@ -76,7 +76,8 @@ add GoogleService-Info.plist to root of the project
 <string>$(PRODUCT_NAME) App would like to access your photo gallery for you to upload photos with the field reports. None of your photos would be accessed without your permission.</string>
 ```
   - Description
-  - [SplashScreen](https://medium.com/handlebar-labs/how-to-add-a-splash-screen-to-a-react-native-app-ios-and-android-30a3cec835ae)
+  - [SplashScreen Library](https://github.com/crazycodeboy/react-native-splash-screen)
+    [SplashScreen Setup](https://medium.com/handlebar-labs/how-to-add-a-splash-screen-to-a-react-native-app-ios-and-android-30a3cec835ae)
 
 **10. App Deployment**
   - Toggle step 6 & 8
@@ -167,7 +168,8 @@ keytool -exportcert -list -v -alias mobileapp -keystore ~/keys/mobileapp/key.jks
 
 **9. App submission guides**
   - Description
-  - [SplashScreen](https://medium.com/handlebar-labs/how-to-add-a-splash-screen-to-a-react-native-app-ios-and-android-30a3cec835ae)
+  - [SplashScreen Library](https://github.com/crazycodeboy/react-native-splash-screen)
+    [SplashScreen Setup](https://medium.com/handlebar-labs/how-to-add-a-splash-screen-to-a-react-native-app-ios-and-android-30a3cec835ae)
 
 **10. App Deployment**
   - Toggle step 6 & 8
