@@ -170,6 +170,9 @@ keytool -exportcert -list -v -alias mobileapp -keystore ~/keys/mobileapp/key.jks
   - Description
   - [SplashScreen Library](https://github.com/crazycodeboy/react-native-splash-screen)
     [SplashScreen Setup](https://medium.com/handlebar-labs/how-to-add-a-splash-screen-to-a-react-native-app-ios-and-android-30a3cec835ae)
+```
+create a 1242 X 2436 asset and export from XD
+```
 
 **10. App Deployment**
   - Toggle step 6 & 8
