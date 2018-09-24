@@ -144,6 +144,9 @@ latest of implementation 'com.google.android.gms:play-services-auth:15.0.0'
 ```
 
 **4. Push notifications**
+https://github.com/OneSignal/OneSignal-Gradle-Plugin/issues/37#issuecomment-391983620
+https://rnfirebase.io/docs/v4.3.x/messaging/android
+https://rnfirebase.io/docs/v4.3.x/notifications/android
 
 **5. Reusable Component library**
   - Form wrappers
@@ -176,3 +179,11 @@ create a 1242 X 2436 asset and export from XD
 
 **10. App Deployment**
   - Toggle step 6 & 8
+
+
+## Miscellaneous
+
+- React Art, d3
+  - https://medium.com/@jennysihua/creating-a-donut-chart-in-react-native-with-d3-and-art-2a7ac91dda5c
+  - https://stackoverflow.com/questions/37658957/no-component-found-for-view-with-name-artshape
+  - https://medium.com/the-react-native-log/animated-charts-in-react-native-using-d3-and-art-21cd9ccf6c58
