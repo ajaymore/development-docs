@@ -30,6 +30,7 @@ update AppDelegate.m file
 Create firebase project, download GoogleService-Info.plist
 add GoogleService-Info.plist to root of the project
 To add libraries -> Libraries ➜ Add Files to [your project's name]
+Update URL Schemes in Info
 ```
 ```
 # react-native-google-signin
