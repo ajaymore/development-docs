@@ -39,3 +39,17 @@ networks:
     external:
       name: reverse-proxy
 ```
+### App Server
+```
+graphql create server --boilerplate typescript-advanced
+
+## .env
+ADMIN_EMAIL="wpadmin@pl.in"
+NODE_ENV="development"
+PRISMA_SECRET="oeyai0aepedoZ6mo"
+PRISMA_MANAGEMENT_API_SECRET="my-secret-pw"
+PRISMA_ENDPOINT="http://localhost:4466/wp/dev"
+
+## prisma.yml
+
+```
