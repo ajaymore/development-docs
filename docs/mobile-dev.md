@@ -104,8 +104,8 @@ https://developer.apple.com/library/archive/documentation/General/Conceptual/App
 https://medium.com/@parkerdan/react-native-universal-linking-ios-deep-linking-android-with-a-rails-server-d993649ae6be
 https://developer.android.com/training/app-links/deep-linking
 ```
-adb shell am start -W -a android.intent.action.VIEW -d "mychat://mychat/chat/Eric" com.simpleapp
-xcrun simctl openurl booted mychat://chat/Eric
+adb shell am start -W -a android.intent.action.VIEW -d "https://rnative.drushtikon.org/__/
+xcrun simctl openurl booted https://rnative.drushtikon.org/__/
 ```
 
 **2. Code development | IDEs Text Editor**
@@ -200,3 +200,13 @@ create a 1242 X 2436 asset and export from XD
   - https://medium.com/@jennysihua/creating-a-donut-chart-in-react-native-with-d3-and-art-2a7ac91dda5c
   - https://stackoverflow.com/questions/37658957/no-component-found-for-view-with-name-artshape
   - https://medium.com/the-react-native-log/animated-charts-in-react-native-using-d3-and-art-21cd9ccf6c58
+  
+ ## Logo
+ - Design at 1024 X 1024
+ - Icon Set Generator on IOS
+ - https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html#foreground.type=clipart&foreground.clipart=android&foreground.space.trim=1&foreground.space.pad=0.25&foreColor=rgba(96%2C%20125%2C%20139%2C%200)&backColor=rgb(68%2C%20138%2C%20255)&crop=0&backgroundShape=square&effects=none&name=ic_launcher
+ 
+ ## Typescript
+ - Add dependencies
+ - tslint.json, tsconfig.json, rn-cli.config.js
+ 
