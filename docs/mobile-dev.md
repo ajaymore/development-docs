@@ -90,11 +90,22 @@ Update URL Schemes in Info
 
 **1. Development setup | Project creation**
 ```
-react-native init myapp
+react-native init rnative
 Open in Android
 Change package name app/build.gradle, MainApplication.java, AndroidManifest.xml, Strings.xml
 Add Firebase
 Edit code in VSCode
+```
+
+**. Deep Linking
+
+https://www.raywenderlich.com/6080-universal-links-make-the-connection
+https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html#//apple_ref/doc/uid/TP40016308-CH12-SW2
+https://medium.com/@parkerdan/react-native-universal-linking-ios-deep-linking-android-with-a-rails-server-d993649ae6be
+https://developer.android.com/training/app-links/deep-linking
+```
+adb shell am start -W -a android.intent.action.VIEW -d "mychat://mychat/chat/Eric" com.simpleapp
+xcrun simctl openurl booted mychat://chat/Eric
 ```
 
 **2. Code development | IDEs Text Editor**
